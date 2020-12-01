@@ -58,16 +58,51 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
-### Graphical Results for Guys   
+ 
+  
+```{r}
+guysData <- filter(FinalData, sex== "guy") 
+```
 
+### Graphical Results for Guys 
+
+```{r}
+barchartGC(~infected + treatment,data= guysData)
+barchartGC(~infected + treatment,data= guysData, type="percent",main="guys")
+
+```
 
 
 ### Numerical Summaries for Guys 
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=guysData)
+rowPerc(table1)
+colPerc(table1)
+```
+  
+
 ### Inferential Results for Guys 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
 
 ### Graphical Results for LGBTQ  
 
+```{r}
+LGBTQdata <- filter(FinalData, LGBTQ== "gay") 
+```
+
+
+```{r}
+barchartGC(~infected + treatment,data= LGBTQdata)
+barchartGC(~infected + treatment,data= LGBTQdata, type="percent",main="gay")
+
+```
 
 
 ### Numerical Summaries for LGBTQ
@@ -78,8 +113,18 @@ fisher.test(table1)
 
 
 
-### Graphical Results for DrugUsers   
+### Graphical Results for DrugUsers 
+  
+```{r}
+drugdata <- filter(FinalData, DrugUser== "yes") 
+```
 
+
+```{r}
+barchartGC(~infected + treatment,data= drugdata)
+barchartGC(~infected + treatment,data= drugdata, type="percent",main="druguser")
+
+```
 
 
 ### Numerical Summaries for DrugUsers 
