@@ -40,7 +40,9 @@ barchartGC(~infected + treatment,data= dataF)
 barchartGC(~infected + treatment,data= dataF, type="percent",main="females")
 
 ```
-
+  
+Gals chart shows that the drug had an effect in protecting gals from getting COVID. Amount of people who got COVID took the placebo and is the highest amount. 
+  
   
 ### Numerical Summaries for Gals 
 
