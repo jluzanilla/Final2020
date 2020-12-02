@@ -143,8 +143,24 @@ The Drug users who took the placebo got more infected with COVID then all the ot
   
 ### Numerical Summaries for DrugUsers 
 
+```{r}
+table1 <- xtabs(~infected + treatment, data= drugdata)
+rowPerc(table1)
+colPerc(table1)
+```
+  
 ### Inferential Results for DrugUsers
+  
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
+  
 # Discussion and Conclusion
+   
+In conclusion if you are in the gals community you should be taking this drug. The guys community was not effective for the drug and it didn't work. For the drug users it is not effective at all and it didn't work for the LGBTQ community either. So in this test the Gals have the better chance for this experiment. 
+  
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
