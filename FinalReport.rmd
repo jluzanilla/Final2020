@@ -71,7 +71,9 @@ barchartGC(~infected + treatment,data= guysData)
 barchartGC(~infected + treatment,data= guysData, type="percent",main="guys")
 
 ```
-
+  
+The guys chart shows that the drug was not effective for guys. Percentage was the drug was not working in the favor for the guys. 
+  
 
 ### Numerical Summaries for Guys 
 
@@ -103,13 +105,24 @@ barchartGC(~infected + treatment,data= LGBTQdata)
 barchartGC(~infected + treatment,data= LGBTQdata, type="percent",main="gay")
 
 ```
-
+  
+For the LGBTQ that took the drug they  got more infected with COVID vs the ones that took the drug. So the drug is not working for this community. 
+  
 
 ### Numerical Summaries for LGBTQ
 
+```{r}
+table1 <- xtabs(~infected + treatment, data= LGBTQdata)
+rowPerc(table1)
+colPerc(table1)
+```
 ### Inferential Results for LGBTQ
 
-
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 
 
@@ -125,8 +138,9 @@ barchartGC(~infected + treatment,data= drugdata)
 barchartGC(~infected + treatment,data= drugdata, type="percent",main="druguser")
 
 ```
-
-
+  
+The Drug users who took the placebo got more infected with COVID then all the other ones, gals, guys, LGBTQ community. Therefore the drug did not work in there favor since they got COVID. 
+  
 ### Numerical Summaries for DrugUsers 
 
 ### Inferential Results for DrugUsers
